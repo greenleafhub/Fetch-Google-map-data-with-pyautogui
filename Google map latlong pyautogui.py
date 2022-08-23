@@ -36,7 +36,9 @@ def geodata(location):
         # customize to your screen, make sure the arrow lands somewhere on the url
         pyautogui.moveTo(1280, 70) 
         pyautogui.click()
-        wait(1)
+        
+        # remember to leave enough time before the geodata loads to the url (depends on your internet)
+        wait(5)
         pyautogui.click()
         
         # copy the redirected url that contains geodata
@@ -45,6 +47,8 @@ def geodata(location):
         text = pyperclip.paste()
         
         x, y = cutstring(text)
+        # you can check if the copied url contains the geodata by 
+        #print(text)
         
         list.append(x) 
         list.append(y)
